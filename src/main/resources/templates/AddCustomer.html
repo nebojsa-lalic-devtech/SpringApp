@@ -1,0 +1,21 @@
+<div layout:fragment="content" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout" >
+
+
+    <h1>Add new customer</h1>
+    <div>
+
+        <form th:action="@{/customers/add}" method="post">
+            <input type="text" class="form-control" name="firstName" placeholder="First Name"></input>
+            <div style="clear:both; display:block;height:10px;"></div>
+            <input type="text" class="form-control" name="lastName" placeholder="Last Name"></input>
+            <div style="clear:both; display:block;height:10px;"></div>
+            <input type="text" class="form-control" name="city" placeholder="City"></input>
+            <div style="clear:both; display:block;height:10px;"></div>
+            <input type="submit" class="btn btn-danger pull-center" value="Save">
+        </form>
+        <div style="clear:both; display:block;height:10px;"></div>
+    </div>
+
+
+
+</div>
