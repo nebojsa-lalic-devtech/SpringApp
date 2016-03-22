@@ -5,6 +5,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" data-th-align="left" >Spring Application</a>
 		</div>
@@ -13,6 +14,9 @@
 				<li><a href="#" th:href="@{/home}">Home</a></li>
 				<li><a href="#" th:href="@{/Customers}">Customers</a></li>
 				<li><a href="#" th:href="@{/Products}">Products</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" >
+				<li><a th:href="@{/login}" th:action="@{/logout}" method="post">Logout</a></li>
 			</ul>
 
 		</div>

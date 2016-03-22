@@ -11,7 +11,7 @@
 
 <div layout:fragment="content">
 
-    <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
+    <h4 th:inline="text" th:align="right">Hello user: [[${#httpServletRequest.remoteUser}]]!</h4>
 
     <h1 th:align="center">Spring Application</h1><br/>
 
