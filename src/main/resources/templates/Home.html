@@ -10,7 +10,8 @@
 
 
 <div layout:fragment="content">
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+    <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
 
     <h1 th:align="center">Spring Application</h1><br/>
 
@@ -25,11 +26,11 @@
             <h3 class="panel-title" data-th-align="center"><a href="Customers">Customers</a></h3>
         </div>
     </div>
-    <div>
-        <form th:action="@{/logout}" method="post" >
-            <input type="submit" class="btn btn-danger" value="Sign Out" />
-        </form>
-    </div>
+
+    <form th:action="@{/logout}" method="post" class="nav navbar-nav navbar-right">
+        <input type="submit" class="btn btn-danger btn-sm" value="Sign Out" />
+    </form>
+
 </div>
 </body>
 </html>
