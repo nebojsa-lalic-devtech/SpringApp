@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" >
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
 <head>
     <title>Sign In</title>
 </head>
 <body>
+<!--
+<div layout:fragment="content" th:align="center">
 <div th:if="${param.error}">
     Invalid username and password.
 </div>
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
+
 <form th:action="@{/login}" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
+
+</div>
+-->
+<!--Bootstrap-->
+
+<div layout:fragment="content" th:align="center">
+
+    <div th:if="${param.error}" >
+        <h5>Invalid username and password!</h5>
+    </div>
+    <div th:if="${param.logout}">
+        <h5>You have been logged out.</h5>
+    </div>
+
+<form class="form-inline" th:action="@{/login}" method="post">
+  <div class="form-group">
+    <label>User Name</label>
+    <input type="text" class="form-control" name="username" placeholder="Type username...">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Type password...">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-success" href="customers">Sign in</button>
+</form>
+</div>
+
 </body>
 </html>
