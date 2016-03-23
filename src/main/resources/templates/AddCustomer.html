@@ -4,14 +4,34 @@
     <h1>Add new customer</h1>
     <div>
 
-        <form th:action="@{/customers/add}" method="post">
-            <input type="text" class="form-control" name="firstName" placeholder="First Name"></input>
-            <div style="clear:both; display:block;height:10px;"></div>
-            <input type="text" class="form-control" name="lastName" placeholder="Last Name"></input>
-            <div style="clear:both; display:block;height:10px;"></div>
-            <input type="text" class="form-control" name="city" placeholder="City"></input>
-            <div style="clear:both; display:block;height:10px;"></div>
-            <input type="submit" class="btn btn-danger pull-center" value="Save">
+        <form action="#" th:action="@{/customers/add}" th:object="${customers}" method="post">
+
+            <table>
+            <tr>
+            <td><input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name..."></input></td>
+            <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</td>
+            </tr>
+            <tr>
+            <td><input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name..."></input></td>
+            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</td>
+            </tr>
+            <tr>
+            <td><input type="text" class="form-control" th:field="*{city}" placeholder="City..."></input></td>
+            <td th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City Error</td>
+            </tr>
+            <tr>
+            <td><input type="text" class="form-control" th:field="*{age}" placeholder="Age..."></input></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+            </tr>
+            <tr>
+            <td><input type="text" class="form-control" th:field="*{postCode}" placeholder="Post Code..."></input></td>
+            <td th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}">Post Code Error</td>
+            </tr>
+            <tr>
+            <td><input type="submit" class="btn btn-danger pull-center" value="Save"></td>
+            </tr>
+            </table>
+
         </form>
         <div style="clear:both; display:block;height:10px;"></div>
     </div>

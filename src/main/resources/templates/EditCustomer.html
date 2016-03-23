@@ -14,7 +14,7 @@
     <h1>Edit customer</h1>
     <div>
 
-        <form th:object="${editCustomer}" th:action="@{/customers/update}"  method="post">
+        <form th:object="${editCustomer}" th:action="@{/customers/update/{id}(id=${editCustomer.id})}"  method="post">
 
             <input type="hidden" th:field="*{id}" class="form-control" name="id" placeholder="id"></input>
 
@@ -27,9 +27,15 @@
             <input type="text" th:field="*{city}" class="form-control" name="city" placeholder="City"></input>
             <div style="clear:both; display:block;height:10px;"></div>
 
+            <input type="text" th:field="*{age}" class="form-control" name="age" placeholder="Age"></input>
+            <div style="clear:both; display:block;height:10px;"></div>
+
+            <input type="text" th:field="*{postCode}" class="form-control" name="postCode" placeholder="Post Code"></input>
+            <div style="clear:both; display:block;height:10px;"></div>
+
             <input type="submit" class="btn btn-danger pull-center" value="Update Customer Details"><br/>
             <div style="clear:both; display:block;height:10px;"></div>
-            <a th:href="@{/Customers}" class="btn btn-success">Cancel Editing</a>
+            <a th:href="@{/customers}" class="btn btn-success">Cancel Editing</a>
 
         </form>
         <div style="clear:both; display:block;height:10px;"></div>

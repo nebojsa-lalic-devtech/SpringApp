@@ -27,7 +27,7 @@
                     <td th:text="${customers.lastName}"></td>
                     <td th:text="${customers.City}"></td>
                     <td align="center">
-                        <a th:href="@{/Customers/Update/{id}(id=${customers.id})}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a th:href="@{/customers/update/{id}(id=${customers.id})}"><span class="glyphicon glyphicon-edit"></span></a>
                         <a th:href="@{/customers/delete/{id}(id=${customers.id})}"><span class="glyphicon glyphicon-trash"></span></a>
                     </td>
                 </tr>

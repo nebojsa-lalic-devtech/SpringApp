@@ -8,7 +8,7 @@ public interface ICustomersService {
 
     Customers saveCustomer(Customers costum);
     Boolean deleteCustomer(Long costId);
-    Customers editCustomer(Customers costum);
+    Customers editCustomer(Long id,Customers costum);
     Customers findCustomer(Long costId);
     Collection<Customers> getAllCustomers();
 

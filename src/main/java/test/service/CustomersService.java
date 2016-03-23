@@ -43,11 +43,13 @@ public class CustomersService implements ICustomersService{
     }
 
     @Override
-    public Customers editCustomer(Customers costum){
-        Customers one = customersRepository.findOne(costum.getId());
-        one.setCity(costum.getCity());
+    public Customers editCustomer(Long id, Customers costum){
+        Customers one = customersRepository.findOne(id);
         one.setFirstName(costum.getFirstName());
         one.setLastName(costum.getLastName());
+        one.setAge(costum.getAge());
+        one.setCity(costum.getCity());
+        one.setPostCode(costum.getPostCode());
         return customersRepository.save(costum);
     }
 
