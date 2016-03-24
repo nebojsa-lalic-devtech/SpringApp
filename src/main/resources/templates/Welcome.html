@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
 <head>
     <title>Welcome</title>
 </head>
 <body>
 
 <div layout:fragment="content" th:align="center">
-<h1>Welcome!</h1>
+    <h1>Welcome!</h1>
     <br/>
-   <p>
-    <a th:href="@{/home}" class="btn btn-success btn-lg">Log In</a>
-   </p>
+    <p>
+        <a th:href="@{/home}" class="btn btn-success btn-lg">Log In</a>
+    </p>
 </div>
 
 </body>

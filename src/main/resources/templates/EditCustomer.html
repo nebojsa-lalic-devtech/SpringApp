@@ -1,4 +1,5 @@
-<div layout:fragment="content" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout" >
+<div layout:fragment="content" xmlns:th="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
 
     <div th:if="${saveCustomer eq 'unsuccess'}">
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -14,14 +15,16 @@
     <h1>Edit customer</h1>
     <div>
 
-        <form th:object="${editCustomer}" th:action="@{/customers/update/{id}(id=${editCustomer.id})}"  method="post">
+        <form th:object="${editCustomer}" th:action="@{/customers/update/{id}(id=${editCustomer.id})}" method="post">
 
             <input type="hidden" th:field="*{id}" class="form-control" name="id" placeholder="id"></input>
 
-            <input type="text" th:field="*{firstName}" class="form-control" name="firstName" placeholder="First Name"></input>
+            <input type="text" th:field="*{firstName}" class="form-control" name="firstName"
+                   placeholder="First Name"></input>
             <div style="clear:both; display:block;height:10px;"></div>
 
-            <input type="text" th:field="*{lastName}" class="form-control" name="lastName" placeholder="Last Name"></input>
+            <input type="text" th:field="*{lastName}" class="form-control" name="lastName"
+                   placeholder="Last Name"></input>
             <div style="clear:both; display:block;height:10px;"></div>
 
             <input type="text" th:field="*{city}" class="form-control" name="city" placeholder="City"></input>
@@ -30,7 +33,8 @@
             <input type="text" th:field="*{age}" class="form-control" name="age" placeholder="Age"></input>
             <div style="clear:both; display:block;height:10px;"></div>
 
-            <input type="text" th:field="*{postCode}" class="form-control" name="postCode" placeholder="Post Code"></input>
+            <input type="text" th:field="*{postCode}" class="form-control" name="postCode"
+                   placeholder="Post Code"></input>
             <div style="clear:both; display:block;height:10px;"></div>
 
             <input type="submit" class="btn btn-danger pull-center" value="Update Customer Details"><br/>
