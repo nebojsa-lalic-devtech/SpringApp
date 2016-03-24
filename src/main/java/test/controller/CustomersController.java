@@ -23,20 +23,20 @@ public class CustomersController {
     public String allCustomers(Model model){
         model.addAttribute("customer",new Customers());
         model.addAttribute("allCustomers",(ArrayList<Customers>)customersService.getAllCustomers());
-        return "Customers";
+        return "customers";
     }
 
     @RequestMapping(value = "/customers/add", method = RequestMethod.GET)
     public String addCustomerView(Model model){
         model.addAttribute("customers", new Customers());
-        return "AddCustomer";
+        return "addCustomer";
     }
 
     @RequestMapping(value = "/customers/add", method = RequestMethod.POST)
     public String addCustomer(@Valid @ModelAttribute("customers") Customers customers, BindingResult bindingResult,
                               final RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
-            return "AddCustomer";
+            return "addCustomer";
         }
         Customers customers1 = customersService.saveCustomer(customers);
         if (customers1 != null) {

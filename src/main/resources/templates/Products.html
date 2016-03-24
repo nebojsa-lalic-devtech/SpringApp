@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout">
 <head>
     <meta charset="UTF-8"></meta>
     <title>Products</title>
 </head>
-
+<body>
 <div layout:fragment="content">
-    <body>
 
     <h1>Add new product</h1>
 
-    <div>
+    <div class="panel-body">
 
-        <form action="Products" method="post">
+        <form th:action="@{/products}" method="post">
 
-            <input type="text" class="form-control" name="name" placeholder="Name Of Product"></input>
-            <div style="clear:both; display:block;height:10px;"></div>
-            <input type="text" class="form-control" name="price" placeholder="Price Of Product (000.00)"></input>
+            <table class="table table-bordered">
+            <tr>
+                <td><input type="text" class="form-control" name="name" placeholder="Name Of Product"></input></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" name="price" placeholder="Price Of Product (000.00)"></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" class="btn btn-danger pull-center" value="Submit"></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/home}" class="btn btn-success">Back To Home Page</a></td>
+            </tr>
+
+            </table>
 
         </form>
-        <div style="clear:both; display:block;height:10px;"></div>
-        <input type="submit" class="btn btn-danger pull-center" value="Submit">
+
     </div>
 
-    <div style="clear:both; display:block;height:10px;"></div>
-    <a th:href="@{/home}" class="btn btn-success">Back To Home Page</a>
-
-    </body>
 </div>
+
+
+</body>
+
 </html>
