@@ -53,14 +53,32 @@
             </exclusions>
         </dependency>
         <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!-- MySQL -->
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- JDBC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
         <!-- DB Connection Pooling -->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
         </dependency>
+
         <!-- ThyMeLeaf ... -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,6 +107,7 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-el</artifactId>
         </dependency>
+
     </dependencies>
 
 

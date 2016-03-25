@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+    <title>Access Denied</title>
+</head>
+<body>
+<div layout:fragment="content" th:align="center">
+<h1>You do not have permission to access this page!
+</h1>
+<form th:action="@{/logout}" method="post">
+              <input th:href="@{/login}" class="btn btn-success" type="submit" value="Sign in as different user" />
+              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form> 
+</div> 
+</body>
+</html>
