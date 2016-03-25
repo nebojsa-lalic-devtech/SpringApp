@@ -14,20 +14,15 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#" th:href="@{/home}">Home</a></li>
 				<li><a href="#" th:href="@{/customers}">Customers</a></li>
-				<li><a href="#" th:href="@{/Products}">Products</a></li>
+				<li><a href="#" th:href="@{/products}">Products</a></li>
 			</ul>
-
             <ul class="nav navbar-nav navbar-right">
-
                 <form th:action="@{/logout}" method="post" class="navbar-form navbar-left">
                     <div class="form-group">
                         <button type="submit" class="btn btn-link">Logout</button>
                     </div>
-
                 </form>
-
             </ul>
-
 		</div>
 	</div>
 </div>

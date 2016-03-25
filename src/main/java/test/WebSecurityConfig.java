@@ -16,7 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 
     @Autowired
-    DataSource dataSource;
+    private DataSource dataSource;
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
@@ -31,10 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         http
                 .authorizeRequests()
                 .antMatchers("/webjars/**").permitAll()
-                .antMatchers("/", "/welcome").access("hasRole('ROLE_ADMIN')")
-                .anyRequest().permitAll()
+                .antMatchers("/", "/welcome").anonymous()
+                .antMatchers("/login").anonymous()
+                .antMatchers("/customers/**", "/products/**", "/home/**").hasAnyRole("ADMIN")
+                .antMatchers("/products/**", "/home/**").hasAnyRole("USER")
+                .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login")
+                .formLogin().loginPage("/login").defaultSuccessUrl("/home")
                 .usernameParameter("username").passwordParameter("password")
                 .and()
                 .logout().logoutSuccessUrl("/login?logout")
